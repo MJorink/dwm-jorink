@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int refresh_rate        = 120;  /* matches dwm's mouse event processing to your monitor's refresh rate for smoother window interactions */
+static const unsigned int refresh_rate        = 144;  /* matches dwm's mouse event processing to your monitor's refresh rate for smoother window interactions */
 static const unsigned int enable_noborder     = 1;   /* toggles noborder feature (0=disabled, 1=enabled) */
 static const unsigned int borderpx            = 1;   /* border pixel of windows */
 static const unsigned int snap                = 26;  /* snap pixel */
@@ -91,27 +91,28 @@ static const Layout layouts[] = {
 static const char *launchercmd[] = { "rofi", "-show", "drun", NULL };
 static const char *termcmd[]     = { "ghostty", NULL };
 /* Web app commands using xdg-open */
-static const char *gmailcmd[]     = { "webapp-launch", "https://gmail.com", NULL };
-static const char *youtubecmd[]   = { "webapp-launch", "https://youtube.com", NULL };
-static const char *chatgptcmd[]   = { "webapp-launch", "https://chatgpt.com", NULL };
-static const char *geminicmd[]      = { "webapp-launch", "https://gemini.google.com/", NULL };
-static const char *xpostcmd[]      = { "webapp-launch", "https://x.com/compose/post", NULL };
+//static const char *gmailcmd[]     = { "webapp-launch", "https://gmail.com", NULL };
+//static const char *youtubecmd[]   = { "webapp-launch", "https://youtube.com", NULL };
+//static const char *chatgptcmd[]   = { "webapp-launch", "https://chatgpt.com", NULL };
+//static const char *geminicmd[]      = { "webapp-launch", "https://gemini.google.com/", NULL };
+//static const char *xpostcmd[]      = { "webapp-launch", "https://x.com/compose/post", NULL };
 
 static Key keys[] = {
     /* modifier                     key                        function        argument */
-    { MODKEY,                       XK_r,                      spawn,          {.v = launchercmd} },
+    { MODKEY,                       XK_space,                      spawn,          {.v = launchercmd} },
     { MODKEY|ControlMask,           XK_r,                      spawn,          SHCMD ("protonrestart")},
-    { MODKEY,                       XK_x,                      spawn,          {.v = termcmd } },
-    { MODKEY,                       XK_a,                      spawn,          {.v = chatgptcmd } },
-    { MODKEY|ShiftMask,             XK_a,                      spawn,          {.v = geminicmd } },
-    { MODKEY|ShiftMask,             XK_x,                      spawn,          {.v = xpostcmd } },
+    { MODKEY|ControlMask,           XK_b,                      spawn,          SHCMD ("~/.local/share/dwm-titus/polybar/launch.sh")},
+    { MODKEY,                       XK_q,                      spawn,          {.v = termcmd } },
+    //{ MODKEY,                       XK_a,                      spawn,          {.v = chatgptcmd } },
+    //{ MODKEY|ShiftMask,             XK_a,                      spawn,          {.v = geminicmd } },
+    //{ MODKEY|ShiftMask,             XK_x,                      spawn,          {.v = xpostcmd } },
     { MODKEY,                       XK_b,                      spawn,          SHCMD ("xdg-open https://")},
-    { MODKEY,                       XK_p,                      spawn,          SHCMD ("flameshot full -p /media/drive/Screenshots/")},
-    { MODKEY|ShiftMask,             XK_p,                      spawn,          SHCMD ("flameshot gui -p /media/drive/Screenshots/")},
-    { MODKEY|ControlMask,           XK_p,                      spawn,          SHCMD ("flameshot gui --clipboard")},
+    //{ MODKEY,                       XK_p,                      spawn,          SHCMD ("flameshot full -p ~/Pictures/Screenshots")},
+    { MODKEY|ShiftMask,             XK_s,                      spawn,          SHCMD ("flameshot gui -p ~/Pictures/Screenshots/")},
+    { MODKEY|ControlMask,           XK_s,                      spawn,          SHCMD ("flameshot gui --clipboard")},
     { MODKEY,                       XK_e,                      spawn,          SHCMD ("xdg-open .")},
     { MODKEY,                       XK_slash,                  spawn,          SHCMD ("dwm-keybinds")},
-    { MODKEY,                       XK_w,                      spawn,          SHCMD ("looking-glass-client -F")},
+    //{ MODKEY,                       XK_w,                      spawn,          SHCMD ("looking-glass-client -F")},
     { MODKEY|ShiftMask,             XK_w,                      spawn,          SHCMD ("feh --randomize --bg-fill ~/Pictures/backgrounds/*")},
     { 0,                            XF86XK_MonBrightnessUp,    spawn,          SHCMD ("xbacklight -inc 10")},
     { 0,                            XF86XK_MonBrightnessDown,  spawn,          SHCMD ("xbacklight -dec 10")},
@@ -119,10 +120,10 @@ static Key keys[] = {
     { 0,                            XF86XK_AudioMute,          spawn,          SHCMD ("amixer sset Master $(amixer get Master | grep -q '\\[on\\]' && echo 'mute' || echo 'unmute')")},
     { 0,                            XF86XK_AudioRaiseVolume,   spawn,          SHCMD ("amixer sset Master 5%+ unmute")},
     { MODKEY|ShiftMask,             XK_b,                      togglebar,      {0} },
-    { MODKEY,                       XK_j,                      focusstack,     {.i = +1 } },
-    { MODKEY,                       XK_k,                      focusstack,     {.i = -1 } },
-    { MODKEY|ShiftMask,             XK_j,                      movestack,      {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_k,                      movestack,      {.i = -1 } },
+    { MODKEY,                       XK_Left,                      focusstack,     {.i = +1 } },
+    { MODKEY,                       XK_Right,                      focusstack,     {.i = -1 } },
+    { MODKEY|ShiftMask,             XK_Left,                      movestack,      {.i = +1 } },
+    { MODKEY|ShiftMask,             XK_Right,                      movestack,      {.i = -1 } },
     { MODKEY,                       XK_i,                      incnmaster,     {.i = +1 } },
     { MODKEY,                       XK_d,                      incnmaster,     {.i = -1 } },
     { MODKEY,                       XK_h,                      setmfact,       {.f = -0.05} },
@@ -132,18 +133,18 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_o,                      setcfact,       {.f =  0.00} },
     { MODKEY,                       XK_Return,                 zoom,           {0} },
     { MODKEY,                       XK_Tab,                    view,           {0} },
-    { MODKEY,                       XK_q,                      killclient,     {0} },
+    { MODKEY,                       XK_w,                      killclient,     {0} },
     { MODKEY,                       XK_t,                      setlayout,      {.v = &layouts[0]} },
     { MODKEY,                       XK_f,                      setlayout,      {.v = &layouts[1]} },
-    { MODKEY,                       XK_m,                      fullscreen,     {0} },
-    { MODKEY,                       XK_space,                  setlayout,      {0} },
+    { MODKEY|ShiftMask,             XK_f,                      fullscreen,     {0} },
+    //{ MODKEY,                       XK_space,                  setlayout,      {0} },
     { MODKEY|ShiftMask,             XK_m,                      togglefloating, {0} },
-    { MODKEY|ShiftMask,             XK_y,                      togglefakefullscreen, {0} },
-    { MODKEY,                       XK_0,                      view,           {.ui = ~0 } },
-    { MODKEY,                       XK_comma,                  focusmon,       {.i = -1 } },
-    { MODKEY,                       XK_period,                 focusmon,       {.i = +1 } },
-    { MODKEY|ShiftMask,             XK_comma,                  tagmon,         {.i = -1 } },
-    { MODKEY|ShiftMask,             XK_period,                 tagmon,         {.i = +1 } },
+    { MODKEY,                       XK_f,                      togglefakefullscreen, {0} },
+    { MODKEY,                       XK_r,                      view,           {.ui = ~0 } },
+    //{ MODKEY,                       XK_comma,                  focusmon,       {.i = -1 } },
+    //{ MODKEY,                       XK_period,                 focusmon,       {.i = +1 } },
+    //{ MODKEY|ShiftMask,             XK_comma,                  tagmon,         {.i = -1 } },
+    //{ MODKEY|ShiftMask,             XK_period,                 tagmon,         {.i = +1 } },
     TAGKEYS(                        XK_1,                      0)
     TAGKEYS(                        XK_2,                      1)
     TAGKEYS(                        XK_3,                      2)
@@ -153,8 +154,8 @@ static Key keys[] = {
     TAGKEYS(                        XK_7,                      6)
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
-    { MODKEY|ShiftMask,             XK_q,                      quit,           {0} },
-    { MODKEY|ControlMask,           XK_q,                      spawn,          SHCMD("$HOME/.config/rofi/powermenu.sh")},
+    //{ MODKEY|ShiftMask,             XK_q,                      quit,           {0} },
+    { MODKEY|ControlMask,           XK_w,                      spawn,          SHCMD("$HOME/.config/rofi/powermenu.sh")},
     { MODKEY|ControlMask|ShiftMask, XK_r,                      spawn,          SHCMD("systemctl reboot")},
     { MODKEY|ControlMask|ShiftMask, XK_s,                      spawn,          SHCMD("systemctl suspend")},
 };
