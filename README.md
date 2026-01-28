@@ -21,6 +21,10 @@ This guide assumes your system has the latest updates before going ahead with th
 2. Enable Multi-Selection with key `v` and select `dwm`, `rofi`, `bash prompt`, and `ghostty` from the list.
   _Note: You can also select other packages as per your requirement._
 3. Press `Enter` to start the installation. Follow the on-screen instructions to complete the installation.
+4. Clone this repo `git clone https://github.com/MJorink/dwm-jorink.git`
+5. `cd dwm-jorink`
+6. `sudo make clean install`
+7. Reboot system if needed
 
 > [!TIP]
 > - By default new terminals are opened by using the keyboard shortcut of <kbd>SUPER</kbd> + <kbd>X</kbd> while rofi is started using <kbd>SUPER</kbd>+<kbd>R</kbd>
