@@ -27,5 +27,6 @@ This guide assumes your system has the latest updates before going ahead with th
 7. Reboot system if needed
 
 > [!TIP]
-> - By default new terminals are opened by using the keyboard shortcut of <kbd>SUPER</kbd> + <kbd>X</kbd> while rofi is started using <kbd>SUPER</kbd>+<kbd>R</kbd>
+> - (dwm-titus) By default new terminals are opened by using the keyboard shortcut of <kbd>SUPER</kbd> + <kbd>X</kbd> while rofi is started using <kbd>SUPER</kbd>+<kbd>R</kbd>
+> - For my config these are <kbd>SUPER</kbd> + <kbd>X</kbd> for the terminal and <kbd>SUPER</kbd>+<kbd>R</kbd> for rofi.
 > - Check `config.h` for the keybindings, and change them according to your preference.
