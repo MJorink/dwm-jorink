@@ -764,7 +764,7 @@ drawbar(Monitor *m)
     int boxs = drw->fonts->h / 9;
     int boxw = drw->fonts->h / 6 + 2;
     unsigned int i, occ = 0, urg = 0;
-    Client *c;
+    //Client *c;
 
     if (!m->showbar)
         return;
@@ -1788,7 +1788,7 @@ void
 tile(Monitor *m)
 {
 	unsigned int i, n, h, mw, my, ty;
-	//Client *c;
+	Client *c;
 
 	for (n = 0, c = nexttiled(m->clients); c; c = nexttiled(c->next), n++);
 	if (n == 0)
