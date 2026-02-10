@@ -766,7 +766,7 @@ drawbar(Monitor *m)
     int boxs = drw->fonts->h / 9;
     int boxw = drw->fonts->h / 6 + 2;
     unsigned int i, occ = 0, urg = 0;
-    Client *c;
+    //Client *c;
 
     if (!m->showbar)
         return;
@@ -2263,7 +2263,7 @@ void
 updatestatus(void)
 {
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
-		strcpy(stext, "dwm-"VERSION);
+		strcpy(stext, "dwm-jorink-"VERSION);
 	drawbar(selmon);
 }
 
