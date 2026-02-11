@@ -47,13 +47,13 @@ static const Rule rules[] = {
 	// For example: xprop WM_ClASS --> click on vscode window --> output: WM_CLASS(STRING) = "code", "Code"
 	// On Arch, the package for xprop is called "xorg-xprop"
 
-	/* class      				instance    							title       tags mask     isfloating   monitor */
-	{ "Chromium", 				"chromium", 							NULL,       1<<1,         0,           -1 },
-	{ "Chromium", 				"crx_nngceckbapebfimnlniiiahkandclblb", NULL,       1<<1,         1,           -1 }, //Bitwarden pop-up
-	{ "Proton-authenticator", 	"proton-authenticator", 				NULL,       1<<3,         0,           -1 },
-	{ "Spotify", 				"spotify", 								NULL,       1<<4,         0,           -1 },
-	{ "Code", 					"code", 								NULL,       1<<2,         0,           -1 },
-	{ "vesktop", 				"vesktop", 								NULL,       1<<4,         0,           -1 },
+	/* class      				instance    							title       tags mask     switchtotag		isfloating   monitor */
+	{ "Chromium", 				"chromium", 							NULL,       1<<1,         1,				0,           -1 },
+	{ "Chromium", 				"crx_nngceckbapebfimnlniiiahkandclblb", NULL,       0,         	  0,				1,           -1 }, //Bitwarden pop-up
+	{ "Proton-authenticator", 	"proton-authenticator", 				NULL,       1<<3,         0,				0,           -1 },
+	{ "Spotify", 				"spotify", 								NULL,       1<<4,         1,				0,           -1 },
+	{ "Code", 					"code", 								NULL,       1<<2,         1,				0,           -1 },
+	{ "vesktop", 				"vesktop", 								NULL,       1<<4,         1,				0,           -1 },
 };
 
 /* layout(s) */
@@ -136,7 +136,6 @@ static const Key keys[] = {
     { 0,                       		XF86XK_MonBrightnessDown, spawn,          {.v = downbrightness} },
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
-	TAGKEYS(                        XK_b,                      1)
 	TAGKEYS(                        XK_3,                      2)
 	TAGKEYS(                        XK_4,                      3)
 	TAGKEYS(                        XK_5,                      4)
