@@ -1,0 +1,2 @@
+exec dwmbar &
+exec dwm
