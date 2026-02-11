@@ -4,7 +4,7 @@ PREFIX=' '
 
 get_date()
 {
-    echo "$PREFIX$(date '+(%a)%d-%m-%y')"
+    echo "$PREFIX$(date '+%A, %d %m %Y')"
 }
 
 get_date
