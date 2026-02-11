@@ -1,0 +1,21 @@
+{
+  "name": "amber-glow-theme",
+  "displayName": "Amber Glow Theme",
+  "description": "A warm dark theme with amber and orange accents",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": [
+    "Themes"
+  ],
+  "contributes": {
+    "themes": [
+      {
+        "label": "Amber Glow",
+        "uiTheme": "vs-dark",
+        "path": "./themes/amber-glow-theme.json"
+      }
+    ]
+  }
+}

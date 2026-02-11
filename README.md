@@ -14,16 +14,14 @@ My dwm config with some patches.
 `sudo pacman -S dwmbar` (Change for your distro if you don´t use an arch based distro)
 
 Copy the 'dwmbar' folder from this repo to /usr/share/
-`sudo cp -r ~/dwm-jorink/dwmbar /usr/share/`
+`sudo cp -r ~/dwm-jorink/extras/dwmbar /usr/share/`
 
 
 ## Running dwm
 
-Edit the ".xinitrc" file in your /home directory. 
+Edit the ".xinitrc" file in your /home directory:
 
-Add 
-`exec dwmbar &
-exec dwm`
+`exec dwmbar & exec dwm`
 
 Save and exit the file.
 
