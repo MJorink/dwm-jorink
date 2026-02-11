@@ -120,6 +120,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      				 spawn,          {.v = browser } },
 	{ MODKEY,                       XK_e,      				 spawn,          {.v = files } },
 	{ MODKEY|ControlMask,           XK_w,      				 quit,           {0} },
+	{ MODKEY,                       XK_f,                    setlayout,      {.v = &layouts[2]} },
+	{ MODKEY|ControlMask,           XK_f,                    setlayout,      {.v = &layouts[0]} },
 	{ 0,                       		XF86XK_AudioRaiseVolume, spawn,          {.v = upvol} },
     { 0,                       		XF86XK_AudioLowerVolume, spawn,          {.v = downvol} },
     { 0,                       		XF86XK_AudioMute,        spawn,          {.v = mutevol} },
@@ -149,4 +151,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,         Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,         Button3,        toggletag,      {0} },
 };
-
