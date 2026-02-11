@@ -2,7 +2,7 @@
 
 # Prints out the time
 
-PREFIX=' '
+PREFIX='󰥔 '
 
 get_time()
 {

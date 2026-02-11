@@ -6,8 +6,8 @@ static const unsigned int borderpx  = 3;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12:antialias=true:autohint=true:hintstyle=hintfull" };
-static const char dmenufont[]       = "JetBrainsMono Nerd Font:size=12:antialias=true:autohint=true:hintstyle=hintfull";
+static const char *fonts[]          = { "MesloLGS Nerd Font Mono:size=14:antialias=true:autohint=true:hintstyle=hintfull", "NotoColorEmoji:pixelsize=16:antialias=true:autohint=true" };
+static const char dmenufont[]       = "MesloLGS Nerd Font Mono:size=14:antialias=true:autohint=true:hintstyle=hintfull";
 static const char color1[]       = "#000000"; // Darkest color
 static const char color2[]       = "#e1750f"; // Dark color
 static const char color3[]       = "#eaaf25"; // Light color
@@ -20,20 +20,29 @@ static const char *colors[][3]      = {
 };
 
 /* tagging */
+// These are the icons for the tags(workspaces), you can also just use numbers or letters if you want.
+// You need a nerd font for the icons to work.
 static const char *tags[] = { "", "󰇧", "", "", "" };
 
 
 static const char *const autostart[] = {
-	"dbus-update-activation-environment --all", NULL, // For gnome-keyring
-	"gnome-keyring-daemon --start --components=secrets", NULL, // For gnome-keyring
+	// Spaces are done by quoting every part of a command, 
+	// for example normally it would be "brightnessctl set 25%", but now every part is seperated with a comma and quotes.
+
+	"dbus-update-activation-environment", "--all", NULL, // For gnome-keyring
+	"gnome-keyring-daemon", "--start", "--components=secrets", NULL, // For gnome-keyring
     "brightnessctl", "set", "25%", NULL,
 	"proton-authenticator", NULL
 };
 
 static const Rule rules[] = {
+	// Find class and instance names by running xprop WM_CLASS, it will show the instance first, then the class.
+	// For example: xprop WM_ClASS --> click on vscode window --> output: WM_CLASS(STRING) = "code", "Code"
+	// On Arch, the package for xprop is called "xorg-xprop"
+
 	/* class      				instance    							title       tags mask     isfloating   monitor */
 	{ "Chromium", 				"chromium", 							NULL,       1<<1,         0,           -1 },
-	{ "Chromium", 				"crx_nngceckbapebfimnlniiiahkandclblb", NULL,       1<<1,         1,           -1 }, //Bitwarden
+	{ "Chromium", 				"crx_nngceckbapebfimnlniiiahkandclblb", NULL,       1<<1,         1,           -1 }, //Bitwarden pop-up
 	{ "Proton-authenticator", 	"proton-authenticator", 				NULL,       1<<3,         0,           -1 },
 	{ "Spotify", 				"spotify", 								NULL,       1<<4,         0,           -1 },
 	{ "Code", 					"code", 								NULL,       1<<2,         0,           -1 },
