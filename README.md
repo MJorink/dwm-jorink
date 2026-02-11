@@ -34,6 +34,8 @@ Save and exit the file.
 The configuration of dwm is done by editing config.h
 and (re)compiling the source code. (sudo make clean install)
 
+For wallpapers: install Feh, uncomment and configure the line in .xinitrc
+
 ## Related Projects
 
 https://github.com/MJorink/st-jorink
