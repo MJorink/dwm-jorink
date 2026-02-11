@@ -5,7 +5,7 @@ Meant for personal use, for learning dwm. I have it uploaded here for archival p
 
 ## Dependencies
 1. yay
-2. `yay -Sy --noconfirm base-devel git xorg-server xorg-xinit ttf-meslo-nerd power-profiles-daemon feh dwmbar i3lock-color spotify vesktop brightnessctl gnome-keyring chromium thunar proton-authenticator-bin bitwarden`
+2. `yay -Sy --noconfirm base-devel git xorg-server xorg-xinit ttf-meslo-nerd power-profiles-daemon feh dwmbar i3lock-color brightnessctl gnome-keyring thunar`
 
 ## Installing dwm-jorink
 
