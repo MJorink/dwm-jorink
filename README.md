@@ -22,7 +22,7 @@ Copy the 'dwmbar' folder from this repo to /usr/share/
 Edit the ".xinitrc" file in your /home directory. 
 
 Add 
-`exec dwm &
+`exec dwmbar &
 exec dwm`
 
 Save and exit the file.
