@@ -1,6 +1,7 @@
 # dwm-jorink
 My dwm config with some patches.
-Meant for personal use, so i'm sorry for the bad documentation.
+
+Meant for personal use, for learning dwm. I have it uploaded here for archival purposes.
 
 ## Dependencies
 1. yay
