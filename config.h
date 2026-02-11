@@ -71,7 +71,6 @@ static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont,
 static const char *termcmd[]  = { "st", NULL };
 static const char *browser[] = { "chromium", NULL};
 static const char *files[] = { "thunar", NULL};
-static const char *killdwm[] = { "pkill", "dwm", NULL};
 static const char *upvol[]   = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "+5%", NULL };
 static const char *downvol[] = { "pactl", "set-sink-volume", "@DEFAULT_SINK@", "-5%", NULL };
 static const char *mutevol[] = { "pactl", "set-sink-mute",   "@DEFAULT_SINK@", "toggle", NULL };
@@ -111,7 +110,6 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_b,      				 spawn,          {.v = browser } },
 	{ MODKEY,                       XK_e,      				 spawn,          {.v = files } },
 	{ MODKEY|ControlMask,           XK_r,      				 quit,           {0} },
-	{ MODKEY|ControlMask,           XK_w,      				 spawn,          {.v = killdwm } },
 	{ 0,                       		XF86XK_AudioRaiseVolume, spawn,          {.v = upvol} },
     { 0,                       		XF86XK_AudioLowerVolume, spawn,          {.v = downvol} },
     { 0,                       		XF86XK_AudioMute,        spawn,          {.v = mutevol} },
