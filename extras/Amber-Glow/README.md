@@ -23,10 +23,3 @@ A warm dark VS Code color theme featuring amber and orange accents.
 4. Select "Preferences: Color Theme"
 
 5. Choose "Amber Glow"
-
-## Features
-
-- Deep black background for reduced eye strain
-- Warm orange and amber syntax highlighting
-- Consistent accent colors throughout the UI
-- High contrast for better readability
