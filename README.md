@@ -9,6 +9,8 @@ My dwm config with some patches.
 
 `sudo make clean install`
 
+`sudo pacman -S dwmbar` (Change for your distro if you don´t use an arch based distro)
+
 
 ## Running dwm
 
