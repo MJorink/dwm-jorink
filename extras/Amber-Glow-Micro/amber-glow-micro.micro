@@ -1,0 +1,45 @@
+# Amber Glow Micro Colorscheme
+# Colors:
+# #000000 - Darkest (background)
+# #e1750f - Dark color (secondary)
+# #eaaf25 - Light color (foreground/text)
+# #fca806 - Active border (highlights)
+
+# Base colors
+color-link default "#eaaf25,#000000"
+color-link char "#eaaf25,#000000"
+color-link number "#fca806,#000000"
+color-link string "#fca806,#000000"
+color-link comment "#e1750f,#000000"
+color-link identifier "#eaaf25,#000000"
+color-link constant "#fca806,#000000"
+color-link statement "#fca806,#000000"
+color-link preproc "#fca806,#000000"
+color-link type "#eaaf25,#000000"
+color-link special "#fca806,#000000"
+color-link underline "underline #eaaf25,#000000"
+color-link keyword "#fca806,#000000"
+color-link literal "#fca806,#000000"
+
+# UI elements
+color-link statusline "#000000,#eaaf25"
+color-link tabbar "#000000,#e1750f"
+color-link tab "#eaaf25,#000000"
+
+# Search and selection
+color-link search "#000000,#fca806"
+color-link selection "#000000,#e1750f"
+
+# Error and warning
+color-link error "#fca806,#000000"
+color-link warning "#e1750f,#000000"
+
+# Diff colors (for Git plugin)
+color-link diff-added "#eaaf25,#000000"
+color-link diff-modified "#fca806,#000000"
+color-link diff-deleted "#e1750f,#000000"
+
+# Line numbers
+color-link line-number "#e1750f,#000000"
+color-link gutter-error "#fca806,#000000"
+color-link gutter-warning "#e1750f,#000000"
