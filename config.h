@@ -30,7 +30,7 @@ static const char *colors[][3]      = {
 // 							You need a nerd font for the icons to work.
 static const char *tags[] = { "[]", "[󰇧]", "[]", "[]", "[/]" }; // These are the icons for the tags(workspaces), you can also just use numbers or letters if you want.
 
-
+// Startup
 static const char *const autostart[] = {
 	// Spaces are done by quoting every part of a command, 
 	// for example normally it would be "brightnessctl set 25%", but now every part is seperated with a comma and quotes.
@@ -40,7 +40,8 @@ static const char *const autostart[] = {
 	"dwmbar", NULL,
 	"sh", "-c", "feh --randomize --bg-fill ~/Pictures/Wallpapers/*", NULL,
     "brightnessctl", "set", "25%", NULL,
-	"proton-authenticator", NULL
+	"proton-authenticator", NULL,
+	"bitwarden-desktop", NULL
 };
 
 static const Rule rules[] = {
@@ -52,6 +53,7 @@ static const Rule rules[] = {
 	{ "Chromium", 				"chromium", 							NULL,       1<<1,         1,				0,           -1 }, 
 	{ "Chromium", 				"crx_nngceckbapebfimnlniiiahkandclblb", NULL,       0,         	  0,				1,           -1 }, //Bitwarden pop-up
 	{ "Proton-authenticator", 	"proton-authenticator", 				NULL,       1<<3,         0,				0,           -1 }, 
+	{ "Bitwarden", 				"bitwarden", 							NULL,       1<<3,         0,				0,           -1 }, 
 	{ "Spotify", 				"spotify", 								NULL,       1<<4,         1,				0,           -1 },
 	{ "Code", 					"code", 								NULL,       1<<2,         1,				0,           -1 },
 	{ "vesktop", 				"vesktop", 								NULL,       1<<4,         1,				0,           -1 },
@@ -84,6 +86,9 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; // Component of dmenucmd, manipulated in spawn()
 static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", color1, "-nf", color3, "-sb", color2, "-sf", color3, NULL };
 static const char *termcmd[]  = { "st", NULL };
+static const char *poweroff[] = { "poweroff", NULL };
+static const char *reboot[] = { "reboot", NULL };
+static const char *lock[] = { "sh", "-c", "~/.local/bin/lock.sh", NULL };
 
 // Programs
 static const char *browser[] = { "chromium", NULL};
@@ -128,6 +133,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_Right,  				  movestack,      {.i = -1 } }, 			// Swap window left
 	{ MODKEY,                       XK_f,                     setlayout,      {.v = &layouts[2]} }, 	// Monocle layout
 	{ MODKEY|ControlMask,           XK_f,                     setlayout,      {.v = &layouts[0]} }, 	// Tiled layout
+	{ MODKEY|ControlMask, 			XK_p,					  spawn,          {.v = poweroff } },		// Poweroff the system
+	{ MODKEY|ControlMask, 			XK_r,					  spawn,          {.v = reboot } },			// Reboot the system
+	{ MODKEY,						XK_l,					  spawn,		  {.v = lock } },			// Lock screen
 	{ 0,                       		XF86XK_AudioRaiseVolume,  spawn,          {.v = upvol} }, 			// Volume up with volume key
     { 0,                       		XF86XK_AudioLowerVolume,  spawn,          {.v = downvol} }, 		// Volume down with volume key
     { 0,                       		XF86XK_AudioMute,         spawn,          {.v = mutevol} }, 		// Mute/unmute with volume key

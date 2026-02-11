@@ -1,38 +1,34 @@
 # dwm-jorink
 My dwm config with some patches.
+Meant for personal use, so i'm sorry for the bad documentation.
+
+## Dependencies
+1. yay
+2. `yay -Sy --noconfirm base-devel git xorg-server xorg-xinit ttf-meslo-nerd power-profiles-daemon feh dwmbar i3lock-color spotify vesktop brightnessctl gnome-keyring chromium thunar proton-authenticator-bin bitwarden`
 
 ## Installing dwm-jorink
 
-`cd ~`
+- `cd ~`
+- `git clone https://github.com/MJorink/dwm-jorink.git`
+- `cd dwm-jorink`
+- `sudo make clean install`
 
-`git clone https://github.com/MJorink/dwm-jorink.git`
+Copy/move the 'dwmbar' folder from extras to /usr/share/
 
-`cd dwm-jorink`
-
-`sudo make clean install`
-
-`sudo pacman -S dwmbar` (Change for your distro if you don´t use an arch based distro)
-
-Copy the 'dwmbar' folder from this repo to /usr/share/
-`sudo cp -r ~/dwm-jorink/extras/dwmbar /usr/share/`
-
+Copy/move the other stuff in extras to ~/ (Dont forget hidden .files!)
 
 ## Running dwm
 
-Edit the ".xinitrc" file in your /home directory:
-
-`exec dwmbar & exec dwm`
-
-Save and exit the file.
-
 `startx`
+
+dwm will automatically start when logging into tty1 if you copied the files from extras
+- `reboot`
+- log in to tty1
 
 ## Configuration
 
 The configuration of dwm is done by editing config.h
 and (re)compiling the source code. (sudo make clean install)
-
-For wallpapers: install Feh, uncomment and configure the line in .xinitrc
 
 ## Related Projects
 
