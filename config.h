@@ -22,7 +22,7 @@ static const char *colors[][3]      = {
 /* tagging */
 // These are the icons for the tags(workspaces), you can also just use numbers or letters if you want.
 // You need a nerd font for the icons to work.
-static const char *tags[] = { "", "󰇧", "", "", "" };
+static const char *tags[] = { "[]", "[󰇧]", "[]", "[]", "[/]" };
 
 
 static const char *const autostart[] = {
