@@ -1,0 +1,10 @@
+#!/bin/bash
+
+PREFIX=' '
+
+get_date()
+{
+    echo "$PREFIX$(date '+(%a)%d-%m-%y')"
+}
+
+get_date

@@ -3,13 +3,18 @@ My dwm config with some patches.
 
 ## Installing dwm-jorink
 
+`cd ~`
+
 `git clone https://github.com/MJorink/dwm-jorink.git`
 
 `cd dwm-jorink`
 
 `sudo make clean install`
 
-`yay -S dwmbar` (Change for your distro if you don´t use an arch based distro)
+`sudo pacman -S dwmbar` (Change for your distro if you don´t use an arch based distro)
+
+Copy the 'dwmbar' folder from this repo to /usr/share/
+`sudo cp -r ~/dwm-jorink/dwmbar /usr/share/`
 
 
 ## Running dwm

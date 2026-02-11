@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Prints out the time
+
+PREFIX=' '
+
+get_time()
+{
+    echo "$PREFIX$(date '+%R')"
+}
+
+get_time
