@@ -36,6 +36,8 @@ static const char *const autostart[] = {
 
 	"dbus-update-activation-environment", "--all", NULL, // For gnome-keyring
 	"gnome-keyring-daemon", "--start", "--components=secrets", NULL, // For gnome-keyring
+	"dwmbar", NULL,
+	"sh", "-c", "feh --randomize --bg-fill ~/Pictures/Wallpapers/*", NULL,
     "brightnessctl", "set", "25%", NULL,
 	"proton-authenticator", NULL
 };
