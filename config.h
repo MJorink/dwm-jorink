@@ -39,9 +39,7 @@ static const char *const autostart[] = {
 	"gnome-keyring-daemon", "--start", "--components=secrets", NULL, // For gnome-keyring
 	"dwmbar", NULL,
 	"sh", "-c", "feh --randomize --bg-fill ~/Pictures/Wallpapers/*", NULL,
-    "brightnessctl", "set", "25%", NULL,
-	"proton-authenticator", NULL,
-	"bitwarden-desktop", NULL
+    "brightnessctl", "set", "25%", NULL
 };
 
 static const Rule rules[] = {
